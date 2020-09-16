@@ -20,4 +20,10 @@ export class OrdenesService {
     let url = dominio + "Ordenar.php"
     return this.http.post(url, JSON.stringify(data));
   }
+
+  RecuperarOrdenes(){
+    let url = dominio + "listado_orden.php"
+    return this.http.get(url)
+  }
+
 }

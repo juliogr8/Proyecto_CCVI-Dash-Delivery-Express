@@ -1,0 +1,5 @@
+<span><mat-icon matPrefix>account_circle</mat-icon><mat-label>Username</mat-label>
+<input matInput type="text" [(ngModel)]="login.user"></span><br>
+<span><mat-icon matPrefix>vpn_key</mat-icon><mat-label>Password</mat-label>
+  <input matInput type="password" [(ngModel)]="login.password"></span><br><br>
+  <button type="submit" class="btn" (click)="log()" [mat-dialog-close]="formisvalid" mat-raised-button color="accent">Done</button>

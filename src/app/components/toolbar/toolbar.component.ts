@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { OrdenesService } from 'src/app/services/ordenes.service';
 import { PasarOrdenService } from 'src/app/services/pasar-orden.service';
+import {MatDialog} from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -18,7 +21,8 @@ export class ToolbarComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private ordenservicio:OrdenesService, private pasar_orden:PasarOrdenService) { }
+  constructor(private router: Router, private ordenservicio:OrdenesService,
+    private pasar_orden:PasarOrdenService, public auth:AuthService, public dialog:MatDialog) { }
   ngOnInit(): void {
     this.pasar_orden.currOrden.subscribe(orden => this.curr_orden = orden)
   }
@@ -30,4 +34,19 @@ export class ToolbarComponent implements OnInit {
   goto(r:string){
     this.router.navigateByUrl(r);
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(LoginComponent,
+      {
+       width: '600px',
+       height:'500px',
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+    logout() {
+      this.router.navigateByUrl('/home');
+      this.auth.logout();
+
+    }
 }

@@ -18,6 +18,13 @@ import { OrderProgressComponent } from './components/order-progress/order-progre
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
+import { LoginComponent } from './components/login/login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ListadoOrdenesComponent } from './components/listado-ordenes/listado-ordenes.component';
+import { MatTableModule } from '@angular/material/table';
+import { EnvioComponent } from './components/envio/envio.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -25,7 +32,10 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     ToolbarComponent,
     HomeComponent,
-    OrderProgressComponent
+    OrderProgressComponent,
+    LoginComponent,
+    ListadoOrdenesComponent,
+    EnvioComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +51,10 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

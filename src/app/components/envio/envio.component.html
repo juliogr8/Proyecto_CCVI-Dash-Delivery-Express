@@ -1,0 +1,32 @@
+<div class="one">
+  <div class="one">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Hacer un Envío</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-label>No. De Orden: </mat-label>
+        <input matInput maxlength="10" placeholder="##########" [(ngModel)]="ord.no_orden"><br><br>
+        <mat-label>Destinatario: </mat-label>
+        <input matInput placeholder="Carlos Guerra" [(ngModel)]="ord.destinatario"><br><br>
+        <mat-label>Código Postal: </mat-label>
+        <input matInput maxlength="5" placeholder="01051" [(ngModel)]="ord.cod_postal"><br><br>
+        <mat-label>Direccion: </mat-label>
+        <input matInput placeholder="9a calle 5-10 zona 1, Villa Hermosa" [(ngModel)]="ord.direccion"><br><br>
+        <mat-label>Qué envia: </mat-label>
+            <mat-select>
+              <mat-option value="Sobres">
+                 Sobres
+              </mat-option>
+              <mat-option value ="Paquetes">
+                Paquetes
+              </mat-option>
+            </mat-select>
+        <button (click)="envio()" mat-raised-button color="accent">Hacer Envío</button>
+      </mat-card-content>
+      </mat-card>
+
+
+  </div>
+
+</div>

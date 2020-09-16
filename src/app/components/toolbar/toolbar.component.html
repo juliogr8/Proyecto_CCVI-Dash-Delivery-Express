@@ -1,7 +1,7 @@
 <mat-toolbar color="accent" class="tb">
   <a (click)="goto('/home')"><img class="logo" src="assets/img/dashdelivery.png"></a>
   <span class="gap1">
-    <button mat-flat-button color="warn">Realiza un Envío</button></span>
+    <button mat-flat-button color="warn" (click)="goto('/envio') ">Realiza un Envío</button></span>
     <span class="filler"></span>
     <span class="gap">
     <input matInput #message maxlength="10" placeholder="No. de Orden" [(ngModel)]="no_orden">
@@ -11,6 +11,13 @@
         </span>
     </button>
   </span>
+  <span *ngIf="!auth.isloggedin()" (click)="openDialog()">Login</span>
+  <span>
+    <button *ngIf="auth.isloggedin()" mat-button [matMenuTriggerFor]="menu"><mat-icon matPrefix>menu</mat-icon></button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="goto('/listado-ordenes')">Listado deOrdenes</button>
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu></span>
 </mat-toolbar>
 
 

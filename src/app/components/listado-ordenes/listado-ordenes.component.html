@@ -1,0 +1,21 @@
+<div class="one">
+  <table>
+    <thead>
+    <tr>
+      <th>No. Orden</th><th>Destinatario</th><th>Código Postal</th><th>Dirección</th><th>Tienda</th><th>Id de Status</th><th>Fecha de Pedido</th><th>Costo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ord of ordenes">
+      <td>{{ord.no_orden}}</td>
+      <td>{{ord.destinatario}}</td>
+      <td>{{ord.cod_postal}}</td>
+      <td>{{ord.direccion}}</td>
+      <td>{{ord.tienda}}</td>
+      <td>{{ord.id_status}}</td>
+      <td>{{ord.fecha_pedido}}</td>
+      <td>{{ord.costo}}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
