@@ -1,0 +1,16 @@
+<mat-toolbar color="accent" class="tb">
+  <a (click)="goto('/home')"><img class="logo" src="assets/img/dashdelivery.png"></a>
+  <span class="gap1">
+    <button mat-flat-button color="warn">Realiza un Envío</button></span>
+    <span class="filler"></span>
+    <span class="gap">
+    <input matInput #message maxlength="10" placeholder="No. de Orden" [(ngModel)]="no_orden">
+    <button type="submit" class="btn" (click)="newOrden();goto('/order-progress')" mat-flat-button color="accent">
+      <span class="material-icons">
+        search
+        </span>
+    </button>
+  </span>
+</mat-toolbar>
+
+

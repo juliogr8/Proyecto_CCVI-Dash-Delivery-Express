@@ -1,0 +1,17 @@
+<div class="one">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Rastreo de su orden</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <b>No. de Orden:</b> {{ord.no_orden}}<br>
+      <b>Destinatario:</b> {{ord.destinatario}}<br>
+      <b>Ciudad de destino:</b> {{ord.ciudad}}<br>
+      <b>Costo de Entrega:</b> {{ord.costo}}<br>
+      <b>Estado de la Orden:</b> {{ord.stat}}<br>
+      <mat-progress-spinner mode="determinate" [value]="val"></mat-progress-spinner>
+    </mat-card-content>
+    </mat-card>
+
+
+</div>
