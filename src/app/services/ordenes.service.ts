@@ -15,4 +15,9 @@ export class OrdenesService {
     let url = dominio + `BuscarOrden.php?no_orden=${no_orden}`
     return this.http.get(url)
   }
+
+  HacerPedido(data) {
+    let url = dominio + "Ordenar.php"
+    return this.http.post(url, JSON.stringify(data));
+  }
 }
