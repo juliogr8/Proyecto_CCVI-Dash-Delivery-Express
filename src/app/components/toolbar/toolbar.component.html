@@ -4,8 +4,8 @@
     <button mat-flat-button color="warn" (click)="goto('/envio') ">Realiza un Envío</button></span>
     <span class="filler"></span>
     <span class="gap">
-    <input matInput #message maxlength="10" placeholder="No. de Orden" [(ngModel)]="no_orden">
-    <button type="submit" class="btn" (click)="newOrden();goto('/order-progress')" mat-flat-button color="accent">
+    <input matInput placeholder="No. de Orden" [(ngModel)]="no_orden" maxlength="10">
+    <button type="submit" class="btn" (click)="newOrden();goto('/order-progress')"  [disabled]="!no_orden"mat-flat-button color="accent">
       <span class="material-icons">
         search
         </span>
@@ -15,7 +15,7 @@
   <span>
     <button *ngIf="auth.isloggedin()" mat-button [matMenuTriggerFor]="menu"><mat-icon matPrefix>menu</mat-icon></button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="goto('/listado-ordenes')">Listado deOrdenes</button>
+  <button mat-menu-item (click)="goto('/listado-ordenes')">Listado de Ordenes</button>
   <button mat-menu-item (click)="logout()">Logout</button>
 </mat-menu></span>
 </mat-toolbar>

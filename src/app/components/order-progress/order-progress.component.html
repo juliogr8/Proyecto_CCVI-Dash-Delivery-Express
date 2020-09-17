@@ -1,4 +1,4 @@
-<div class="one">
+
   <mat-card class="card">
     <mat-card-header>
       <mat-card-title>Rastreo de su orden</mat-card-title>
@@ -10,9 +10,8 @@
       <b>Costo de Entrega:</b> {{ord.costo}}<br>
       <b>Estado de la Orden:</b> {{ord.stat}}<br>
       <mat-progress-spinner mode="determinate" [value]="val"></mat-progress-spinner>
-      <button (click)="changestatus()" mat-raised-button color="accent">Cambiar Estado</button>
+      <button *ngIf="auth.isloggedin()" (click)="changestatus()" mat-raised-button color="accent">Cambiar Estado</button>
     </mat-card-content>
     </mat-card>
 
 
-</div>

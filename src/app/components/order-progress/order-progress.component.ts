@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OrdenesService } from 'src/app/services/ordenes.service';
 import { PasarOrdenService } from 'src/app/services/pasar-orden.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-order-progress',
@@ -22,7 +23,7 @@ export class OrderProgressComponent implements OnInit {
     stat:null
   }
 
-  constructor(private ordenservicio:OrdenesService, private pasar_orden:PasarOrdenService) { }
+  constructor(private ordenservicio:OrdenesService, private pasar_orden:PasarOrdenService, public auth:AuthService) { }
 
   ngOnInit(): void {
     this.pasar_orden.currOrden.subscribe(orden =>{

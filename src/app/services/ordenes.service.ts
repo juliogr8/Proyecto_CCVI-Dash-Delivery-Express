@@ -26,4 +26,9 @@ export class OrdenesService {
     return this.http.get(url)
   }
 
+  CambiarEstado(data){
+    let url = dominio + "Cambiar_estado.php"
+    return this.http.post(url, JSON.stringify(data));
+  }
+
 }
