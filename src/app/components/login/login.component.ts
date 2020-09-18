@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     console.log(this.login);
     this.auth.login(this.login).subscribe(datos => {
       console.log(datos['resultado'])
-      if (datos['resultado']=='') {
+      if (datos['resultado']=='OK') {
         alert("Bienvenido!");
         this.auth.storelogin();
         this.formisvalid = true;

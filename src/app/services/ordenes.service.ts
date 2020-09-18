@@ -27,8 +27,12 @@ export class OrdenesService {
   }
 
   CambiarEstado(data){
-    let url = dominio + "Cambiar_estado.php"
+    let url = dominio + "Cambiar_Estado.php"
     return this.http.post(url, JSON.stringify(data));
+  }
+  getNo_Orden(){
+    let url = dominio + "Retornar_No_Orden.php"
+    return this.http.get(url)
   }
 
 }

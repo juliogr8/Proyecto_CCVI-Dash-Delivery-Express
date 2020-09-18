@@ -13,4 +13,4 @@
   }
   $cad=json_encode($vec);
   echo $cad;
-  header('Content-Type: application/json');
+  header('Content-Type: application/json');         

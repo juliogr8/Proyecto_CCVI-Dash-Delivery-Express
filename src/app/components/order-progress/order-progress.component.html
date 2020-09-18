@@ -7,7 +7,7 @@
       <b>No. de Orden:</b> {{ord.no_orden}}<br>
       <b>Destinatario:</b> {{ord.destinatario}}<br>
       <b>Ciudad de destino:</b> {{ord.ciudad}}<br>
-      <b>Costo de Entrega:</b> {{ord.costo}}<br>
+      <b>Costo de Entrega:</b> Q{{ord.costo}}<br>
       <b>Estado de la Orden:</b> {{ord.stat}}<br>
       <mat-progress-spinner mode="determinate" [value]="val"></mat-progress-spinner>
       <button *ngIf="auth.isloggedin()" (click)="changestatus()" mat-raised-button color="accent">Cambiar Estado</button>

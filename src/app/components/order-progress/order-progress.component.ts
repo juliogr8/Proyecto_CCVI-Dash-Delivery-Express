@@ -19,7 +19,7 @@ export class OrderProgressComponent implements OnInit {
     ciudad:null,
     direccion:null,
     costo:null,
-    idstatus:null,
+    id_status:null,
     stat:null
   }
 
@@ -31,7 +31,7 @@ export class OrderProgressComponent implements OnInit {
 
       this.ordenservicio.BuscarOrden(this.no_orden).subscribe(result => {
         this.ord = result[0]
-        switch(this.ord.idstatus){
+        switch(this.ord.id_status){
           case "1": {
             this.val="20"
             break
@@ -66,27 +66,29 @@ export class OrderProgressComponent implements OnInit {
   }
 
   changestatus(){
-    switch(this.ord.idstatus){
+    switch(this.ord.id_status){
+
       case "1": {
-        this.ord.idstatus = "2";
+        this.ord.id_status = "2";
+
         this.ord.stat = "Surtiéndose."
         this.val="40"
         break
       }
       case "2": {
-        this.ord.idstatus = "3";
+        this.ord.id_status = "3";
         this.ord.stat = "Empacándose."
         this.val="60"
         break
       }
       case "3": {
-        this.ord.idstatus = "4";
+        this.ord.id_status = "4";
         this.ord.stat = "En ruta."
         this.val="80"
         break
       }
       case "4": {
-        this.ord.idstatus = "5";
+        this.ord.id_status = "5";
         this.ord.stat = "Entregándose."
         this.val="100"
         break
@@ -99,5 +101,10 @@ export class OrderProgressComponent implements OnInit {
         break
       }
     }
+    this.ordenservicio.CambiarEstado(this.ord).subscribe(datos => {
+      if (datos['resultado']=='OK') {
+        console.log("Estado cambiado");
+    }
+  });
   }
 }

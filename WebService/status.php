@@ -20,7 +20,7 @@
 
     $status = $line["id_status"];
 //devolver estátus en formato xml
-    if($formato == "xml") {
+    if($formato == "XML") {
         echo "<orden>
                 <courrier>Dash Delivery Express</courrier>
                 <orden>$orden</orden>
@@ -30,11 +30,11 @@
       }
 
 //devolver estátus en formato json
-      elseif ($formato == "json") {
-        echo "{“orden” :
-                { “courrier” : “Dash Delivery Express”,
-                    “orden” : “ $orden ”,
-                 “status” : “ $status ”
+      elseif ($formato == "JSON") {
+        echo "{\"orden\" :
+                { \"courrier\" : \"Dash Delivery Express\",
+                    \"orden\" : \"$orden\",
+                 \"status\" : \"$status\"
                 }
             }";
       }

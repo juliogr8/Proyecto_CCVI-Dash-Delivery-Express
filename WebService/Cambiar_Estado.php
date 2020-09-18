@@ -7,17 +7,17 @@
   $params = json_decode($json);
   
   require("conexion.php");
-  $link=returnlink();
+  $link=returnLink();
   
 
-  pg_query($link,"INSERT INTO Orden VALUES (DEFAULT,'$params->destinatario','$params->cod_postal', '$params->direccion',DEFAULT, DEFAULT,DEFAULT,DEFAULT)");
-//$result = pg_query($link, "SELECT SUM(CURRVAL('orden_no_orden_seq')+1))"  
+  pg_query($link,"UPDATE Orden SET id_status='$params->id_status'");
+    
   
   class Result {}
 
   $response = new Result();
   $response->resultado = 'OK';
-  $response->mensaje = 'Orden Exitosa!';
+  $response->mensaje = 'Cambio de Estado actualizado.';
 
   header('Content-Type: application/json');
-  echo json_encode($response);
+  echo json_encode($response);  
