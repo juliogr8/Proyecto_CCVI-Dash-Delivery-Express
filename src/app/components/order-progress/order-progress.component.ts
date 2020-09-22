@@ -89,7 +89,7 @@ export class OrderProgressComponent implements OnInit {
       }
       case "4": {
         this.ord.id_status = "5";
-        this.ord.stat = "Entregándose."
+        this.ord.stat = "Entregado."
         this.val="100"
         break
       }

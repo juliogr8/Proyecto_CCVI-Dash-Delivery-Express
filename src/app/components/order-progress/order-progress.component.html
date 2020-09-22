@@ -4,12 +4,13 @@
       <mat-card-title>Rastreo de su orden</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+
       <b>No. de Orden:</b> {{ord.no_orden}}<br>
       <b>Destinatario:</b> {{ord.destinatario}}<br>
       <b>Ciudad de destino:</b> {{ord.ciudad}}<br>
       <b>Costo de Entrega:</b> Q{{ord.costo}}<br>
-      <b>Estado de la Orden:</b> {{ord.stat}}<br>
-      <mat-progress-spinner mode="determinate" [value]="val"></mat-progress-spinner>
+      <b>Estado de la Orden:</b> {{ord.stat}}<br><br>
+      <mat-progress-bar mode="determinate" [value]="val"></mat-progress-bar><br>
       <button *ngIf="auth.isloggedin()" (click)="changestatus()" mat-raised-button color="accent">Cambiar Estado</button>
     </mat-card-content>
     </mat-card>

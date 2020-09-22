@@ -18,28 +18,28 @@ export class EnvioComponent implements OnInit {
   }
 
   ciudad = {
-    "01000": "Guatemala",
-    "02000": "El Progreso",
-    "03000": "Sacatepequez",
-    "04000": "Chimaltenango",
-    "05000": "Escuintla",
-    "06000": "Santa Rosa",
-    "07000": "Sololá",
-    "08000": "Totonicapán",
-    "09000": "Quetzaltenango",
-    "10000": "Suchitepequez",
-    "11000": "Retalhuleu",
-    "12000": "San Marcos",
-    "13000": "Huehuetenango",
-    "14000": "Quiché",
-    "15000": "Baja Verapaz",
-    "16000": "Alta Verapaz",
-    "17000": "Petén",
-    "18000": "Izabal",
-    "19000": "Zacapa",
-    "20000": "Chiquimula",
-    "21000": "Jalapa",
-    "22000": "Jutiapa"
+    "01001": "Guatemala",
+    "02001": "El Progreso",
+    "03001": "Sacatepequez",
+    "04001": "Chimaltenango",
+    "05001": "Escuintla",
+    "06001": "Santa Rosa",
+    "07001": "Sololá",
+    "08001": "Totonicapán",
+    "09001": "Quetzaltenango",
+    "10001": "Suchitepequez",
+    "11001": "Retalhuleu",
+    "12001": "San Marcos",
+    "13001": "Huehuetenango",
+    "14001": "Quiché",
+    "15001": "Baja Verapaz",
+    "16001": "Alta Verapaz",
+    "17001": "Petén",
+    "18001": "Izabal",
+    "19001": "Zacapa",
+    "20001": "Chiquimula",
+    "21001": "Jalapa",
+    "22001": "Jutiapa"
   }
 
   val = Object.values(this.ciudad)
@@ -66,8 +66,9 @@ export class EnvioComponent implements OnInit {
       }
     });
       this.ordenesServicio.getNo_Orden().subscribe(result => {
-        this.no_orden = result
+        this.no_orden = "Su número de orden es: " + result[0].last_value
         console.log(result)
+        console.log(this.no_orden)
       }
         );
         if(this.tipo == "Sobres") { this.costo = "Costo de envío: Q30.00" }
