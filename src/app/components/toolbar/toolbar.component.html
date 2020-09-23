@@ -11,7 +11,7 @@
         </span>
     </button>
   </span>
-  <span *ngIf="!auth.isloggedin()" (click)="openDialog()">Login</span>
+  <span *ngIf="!auth.isloggedin()" (click)="openDialog()">Portal</span>
   <span>
     <button *ngIf="auth.isloggedin()" mat-button [matMenuTriggerFor]="menu"><mat-icon matPrefix>menu</mat-icon></button>
 <mat-menu #menu="matMenu">
